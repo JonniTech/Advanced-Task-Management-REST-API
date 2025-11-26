@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 import os
 
-load_dotenv() # loads auto .env
+load_dotenv() # loads auto .env only once
 
 SECRET_KEY =  os.getenv("SECRET_KEY")
 DATABASE_URL = os.getenv("DATABASE_URL")
