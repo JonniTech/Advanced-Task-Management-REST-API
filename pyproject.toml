@@ -10,10 +10,8 @@ dependencies = [
     "async-exit-stack>=1.0.1",
     "asyncpg>=0.31.0",
     "fastapi>=0.122.0",
-    "passlib>=1.7.4",
     "pyjwt>=2.10.1",
     "python-dotenv>=1.2.1",
-    "python-multipart>=0.0.20",
     "tortoise-orm>=0.25.1",
     "uvicorn>=0.38.0",
 ]
