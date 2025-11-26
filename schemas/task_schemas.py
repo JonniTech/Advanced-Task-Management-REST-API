@@ -9,6 +9,8 @@ class TaskCreate(BaseModel):
 class TaskUpdate(BaseModel):
     title:Optional[str] =  None
     description:Optional[str] =  None
+    completed:Optional[bool] = None
+    assigned_to:Optional[List[int]] = None
 
 
 class TaskOut(BaseModel):
