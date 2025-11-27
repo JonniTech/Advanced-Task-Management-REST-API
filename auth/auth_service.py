@@ -10,7 +10,7 @@ class AuthService:
         exists = await User.get_or_none(email=email)
 
         if exists:
-            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,detail="Email already in use")
+            raise HTTPException(status_code=status.HTTP_409_CONFLICT,detail="Email already in use")
         
         hashed_password = hash_password(password)
 
