@@ -12,3 +12,6 @@ class Project(models.Model):
 
     class Meta:
         table = "projects"
+
+    def __str__(self):
+        return self.name
