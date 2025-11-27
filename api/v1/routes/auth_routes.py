@@ -31,7 +31,7 @@ async def login_user(payload:LoginScheme):
 
 # Dependency to get current user logged in
 async def get_current_user(token:str = Depends(oauth2_scheme)) -> User:
-    user = await get_current_user(token)
+    user = await auth_service.get_current_user(token)
     return user
 
 # protected route

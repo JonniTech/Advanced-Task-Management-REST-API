@@ -24,7 +24,7 @@ class AuthService:
         if not user:
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,detail="Invalid email address")
         
-        if not verify_password(password,user.password):
+        if not verify_password(user.password,password):
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,detail="Invalid password")
         
         access_token = create_access_token({"user_id":user.id})
