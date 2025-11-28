@@ -4,6 +4,8 @@ from typing import Optional,List
 class TaskCreate(BaseModel):
     title:str
     description:Optional[str] = None
+    project_id:int
+    assigned_to_ids:Optional[List[int]] = []  # list of user IDs to assign the task to
 
 
 class TaskUpdate(BaseModel):
@@ -18,6 +20,7 @@ class TaskOut(BaseModel):
     title:str
     description:Optional[str]
     completed:bool
+    owner_id:int
     project_id:int
     assigned_to:List[str] = [] # list of assigned users
 

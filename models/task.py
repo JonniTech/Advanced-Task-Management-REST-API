@@ -6,6 +6,7 @@ class Task(models.Model):
     description = fields.TextField(null=True)
     completed = fields.BooleanField(default=False)
 
+    owner = fields.ForeignKeyField("models.User", related_name="tasks_owner")
     project = fields.ForeignKeyField("models.Project", related_name="tasks")
     assigned_to = fields.ManyToManyField("models.User", related_name="tasks_assigned")
 

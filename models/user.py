@@ -9,6 +9,7 @@ class User(models.Model):
     password = fields.CharField(max_length=255)
     role = fields.CharField(max_length=20,default="user")
 
+    task_owner = fields.ReverseRelation["Task"] # tasks owned by this user
     projects =  fields.ReverseRelation["Project"] #projects of this user
     tasks_assigned = fields.ManyToManyRelation["Task"]  # task assigned to this user
 
