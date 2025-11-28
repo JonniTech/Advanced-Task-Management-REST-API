@@ -4,7 +4,7 @@ from schemas.auth_schemas import RegisterSchema,LoginScheme,UserOut,TokenSchema
 from auth.auth_service import auth_service
 from models.user import User
 
-router = APIRouter(prefix="/api/auth", tags=["Authentication"])
+router = APIRouter(prefix="/api/auth", tags=["Authentication"]) 
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="api/auth/login")
 
