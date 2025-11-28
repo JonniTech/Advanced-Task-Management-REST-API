@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from api.v1.routes.auth_routes import router as auth_router
 from api.v1.routes.project_routes import router as project_router
+from api.v1.routes.task_routes import router as task_router 
 from database.connection import init_db
 
 app = FastAPI(
@@ -14,6 +15,7 @@ async def startup_event():
 
 app.include_router(auth_router)
 app.include_router(project_router)
+app.include_router(task_router)
 
 @app.get("/",tags=["Root"])
 async def root():
